@@ -68,12 +68,12 @@ const data = {
     if (submitted) {
       const url = await submitted.fields.getTextInputValue('yt')
       await submitted.reply('memuat.....')
-      let downloaded = 0
+      /*let downloaded = 0
 
-      /*if (fs.existsSync(output)) {
+      if (fs.existsSync(output)) {
         downloaded = fs.statSync(output.path).size
       }
-      const video = await ytd(url, ['--format=18'], { start: downloaded, cwd: __dirname })
+      const video = await ytd(url, { start: downloaded, cwd: __dirname })
       await video.on('info', function(info) {
         const data = {}
         data.status = 'download started'
@@ -115,7 +115,7 @@ const data = {
       stream.on('finish', async () => {
         console.log('selesai')
         await interaction.channel.send({ files: [output.path] })
-        console.log('kirim selesa')
+        console.log('kirim selesai')
       })
       /*ytd.getInfo(url, function(err, info) {
         if (err) throw err
@@ -133,6 +133,14 @@ const data = {
           url: dataInfo.url
         }
         interaction.channel.send({ embeds: [finished] });
+      })
+      video.on('complete', function complete(info) {
+        'use strict'
+        console.log('filename: ' + info._filename + ' already downloaded.')
+      })
+
+      video.on('end', function() {
+        console.log('finished downloading!')
       })*/
       //await wait(6000)
       //await interaction.channel.send({ files: [`temp/${name}`] })

@@ -7,7 +7,8 @@
   "type": "module",
   "repository": "https://github.com/Code-seven123/Bot-Discord",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --es-module-specifier-resolution=node --no-warnings index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "@sasmeee/igdl": "^1.0.0",
