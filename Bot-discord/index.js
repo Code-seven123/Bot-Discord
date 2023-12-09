@@ -21,9 +21,9 @@ app.get("/", function (request, response) {
     response.sendStatus(200);
 });
 
-let listener = app.listen(process.env.PORT || 3000, function () {
+let listener = app.listen(process.env.PORT || 3000, async () => {
     console.log("Your app is listening on port " + listener.address().port);
-});
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -104,4 +104,4 @@ const rest = new REST().setToken(process.env.TOKEN);
 		console.error(error);
 	}
 })();
-
+})
